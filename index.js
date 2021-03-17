@@ -5,6 +5,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.use(express.static('public'))
+
 const data = YAML.parse(fs.readFileSync('./config.yml', 'utf8'))
 console.log(data)
 function getUrl(deviceId) {
@@ -18,10 +20,6 @@ function getUrl(deviceId) {
 function log() {
     console.log(new Date().toLocaleString(), ...arguments)
 }
-
-app.get('/', (req, res) => {
-    res.send('123456')
-})
 
 app.post('/conversation', (req, res) => {
     const { body } = req
