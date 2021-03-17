@@ -19,8 +19,6 @@ function log() {
     console.log(new Date().toLocaleString(), ...arguments)
 }
 
-// console.log(getUrl('SztuWCwTVAvMuyI3M/v3Hg=='))
-
 app.get('/', (req, res) => {
     const { body } = req
     log(body)
