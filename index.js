@@ -20,6 +20,10 @@ function log() {
 }
 
 app.get('/', (req, res) => {
+    res.send('123456')
+})
+
+app.post('/conversation', (req, res) => {
     const { body } = req
     log(body)
     let deviceId = ''
